@@ -1,8 +1,7 @@
 <?php
 // Q1 変数と文字列
 $myname = '戸田';
-$message = '私の名前は「' . $myname . '」です。';
-var_dump($message);
+echo = '私の名前は「' . $myname . '」です。';
 
 //-----------------------------------------------------------------
 // Q2 四則演算
@@ -19,22 +18,16 @@ echo '現在時刻は、' . $currentTime . 'です。';
 // Q4 条件分岐-1 if文
 $device = 'windows';
 
-if ($device == 'windows') {
-    echo '使用OSは、windowsです。';
+if ($device === 'windows' || $device === 'mac') {
+    echo '使用OSは、' . $device . 'です。';
 } else {
-    if ($device == 'mac') {
-        echo '使用OSは、macです。';
-    } else {
-        echo 'どちらでもありません。'
-;
-    }
+    echo 'どちらでもありません。';
 }
-
 //-----------------------------------------------------------------
 // Q5 条件分岐-2 三項演算子
 $age = 20;
-
-$result = ($age < 18) ? '未成年です。' : '成人です。';
+$isMinor = $age < 18;
+$result = $isMinor ? '未成年です。' : '成人です。';
 echo $result;
 
 //-----------------------------------------------------------------
@@ -59,9 +52,6 @@ foreach ($kanto as $prefecture => $capital) {
     echo $capital . "\n";
 }
 
-//foreach ループを使ってバリューを縦に表示
-//\n を使って改行を挿入
-
 //-----------------------------------------------------------------
 // Q8 連想配列-2
 $kanto = array(
@@ -77,7 +67,6 @@ $kanto = array(
 foreach ($kanto as $prefecture => $capital) {
     if ($prefecture == '埼玉県') {
         echo $prefecture . 'の県庁所在地は、' . $capital . 'です。';
-        break;
     }
 }
 
@@ -109,29 +98,28 @@ foreach ($kanto as $prefecture => $capital) {
 //-----------------------------------------------------------------
 // Q10 関数-1
 function hello($name) {
-    return $name . "さん、こんにちは。\n";
+    echo $name . "さん、こんにちは。\n";
 }
 
-echo hello('金谷');
-echo hello('安藤');
+hello('金谷');
+hello('安藤');
 
-//\nの改行を反映させるため""を使用
 
 //-----------------------------------------------------------------
 // Q11 関数-2
-function tax($price) {
-    $TaxRate = 0.1; // 消費税率（10%）を指定
-    $TaxPrice = $price * (1 + $TaxRate); // 税込価格を計算
-    return $TaxPrice;
+function calcTaxInPrice($price) {
+    $taxRate = 0.1;
+    $tTaxInPrice = $price * (1 + $TaxRate);
+    return $TaxInPrice;
 }
 
-$price = 1000; // 税抜き価格を定義
-$TaxPrice = tax($price); // 関数を実行して税込価格を取得
+$price = 1000;
+$TaxInPrice = calcTaxInPrice($price);
 
-echo $price . '円の商品の税込価格は' . $TaxPrice . '円です。';
+echo $price . '円の商品の税込価格は' . $TaxInPrice . '円です。';
 //-----------------------------------------------------------------
 // Q12 関数とif文
-function DeterminedNumber($num) {
+function distinctNum($num) {
     if ($num % 2 == 0) {
         return $num . 'は偶数です。';
     } else {
@@ -139,12 +127,12 @@ function DeterminedNumber($num) {
     }
 }
 
-echo DeterminedNumber(11) . "\n";
-echo DeterminedNumber(24) . "\n";
+echo distinctNum(11) . "\n";
+echo distinctNum(24) . "\n";
 
 //-----------------------------------------------------------------
 // Q13 関数とswitch文
-function result($grade) {
+function evaluateGrade($grade) {
     switch ($grade) {
         case 'A':
         case 'B':
@@ -158,8 +146,8 @@ function result($grade) {
     }
 }
 
-echo result('A') . "\n";
-echo result('E') . "\n";
+echo evaluateGrade('A') . "\n";
+echo evaluateGrade('E') . "\n";
 //-----------------------------------------------------------------
 
 ?>
