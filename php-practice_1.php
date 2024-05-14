@@ -98,7 +98,7 @@ foreach ($kanto as $prefecture => $capital) {
 //-----------------------------------------------------------------
 // Q10 関数-1
 function hello($name) {
-    echo $name . 'さん、こんにちは。'. "\n";
+    echo $name . ' さん、こんにちは。 ' . "\n";
 }
 
 hello('金谷');
@@ -119,7 +119,7 @@ $TaxInPrice = calcTaxInPrice($price);
 echo $price . '円の商品の税込価格は' . $TaxInPrice . '円です。';
 //-----------------------------------------------------------------
 // Q12 関数とif文
-function distinctNum($num) {
+function distinguishNum($num) {
     if ($num % 2 == 0) {
         return $num . 'は偶数です。';
     } else {
@@ -127,8 +127,8 @@ function distinctNum($num) {
     }
 }
 
-echo distinctNum(11) . "\n";
-echo distinctNum(24) . "\n";
+echo distinguishNum(11) . "\n";
+echo distinguishNum(24) . "\n";
 
 //-----------------------------------------------------------------
 // Q13 関数とswitch文
