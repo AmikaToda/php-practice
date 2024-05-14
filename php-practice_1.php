@@ -98,7 +98,7 @@ foreach ($kanto as $prefecture => $capital) {
 //-----------------------------------------------------------------
 // Q10 関数-1
 function hello($name) {
-    echo $name . "さん、こんにちは。\n";
+    echo $name . 'さん、こんにちは。'. "\n";
 }
 
 hello('金谷');
