@@ -98,25 +98,25 @@ foreach ($kanto as $prefecture => $capital) {
 //-----------------------------------------------------------------
 // Q10 関数-1
 function hello($name) {
-    echo $name . ' さん、こんにちは。 ' . "\n";
+    return $name . ' さん、こんにちは。 ' . "\n";
 }
 
-hello('金谷');
-hello('安藤');
+echo hello('金谷');
+echo hello('安藤');
 
 
 //-----------------------------------------------------------------
-// Q11 関数-2
+Q11 関数-2
 function calcTaxInPrice($price) {
-    $taxRate = 0.1;
-    $tTaxInPrice = $price * (1 + $TaxRate);
+    $TaxRate = 0.1;
+    $TaxInPrice = $price * (1 + $TaxRate);
     return $TaxInPrice;
 }
 
 $price = 1000;
-$TaxInPrice = calcTaxInPrice($price);
 
-echo $price . '円の商品の税込価格は' . $TaxInPrice . '円です。';
+echo $price . '円の商品の税込価格は' . calcTaxInPrice($price) . '円です。';
+
 //-----------------------------------------------------------------
 // Q12 関数とif文
 function distinguishNum($num) {
